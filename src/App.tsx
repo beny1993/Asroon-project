@@ -6,10 +6,12 @@ import {
   Route
 } from "react-router-dom";
 import MainTable from './components/mainTable/MainTable';
+import Content from './components/content/Content';
 
 function App() {
   return (
     <Container >
+      <Logo />
       <Switch>
         <Route exact path="/">
           <Form />
@@ -18,7 +20,7 @@ function App() {
           <MainTable />
         </Route>
         <Route path="/content">
-          <Form />
+          <Content />
         </Route>
       </Switch>
     </Container>
@@ -33,4 +35,14 @@ height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
+flex-direction: column;
+`
+
+const Logo = styled.div`
+width: 140px;
+height: 132px;
+margin-bottom: 80px;
+background-image: url("/logo.png");
+background-size: cover;
+align-self: center;
 `
